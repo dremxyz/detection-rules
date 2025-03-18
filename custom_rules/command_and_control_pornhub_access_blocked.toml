@@ -27,7 +27,7 @@ tags = [
 timestamp_override = "event.ingested"
 type = "eql"
 query = '''
-where process.args: "https://pornhub.com"
+process where process.name == "wget" and process.args : "https://pornhub.com"
 '''
 note = """## Triage and analysis
 
