@@ -14,19 +14,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'echo "Running tests..."'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                sh 'echo "Deploying application..."'
+                sh 'echo "Building project..."'
             }
         }
     }
