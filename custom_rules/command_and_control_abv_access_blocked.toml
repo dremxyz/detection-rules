@@ -1,13 +1,13 @@
 [metadata]
-creation_date = "2025/03/18"
+creation_date = "2025/03/19"
 integration = ["system_audit", "auditd_manager"]
 maturity = "production"
-updated_date = "2025/03/18"
+updated_date = "2025/03/19"
 
 [rule]
 author = ["dremxyz"]
 description = """
-Suspicious cURL to pornhub
+Suspicious Access to abv.bg
 """
 from = "now-9m"
 index = ["apm-*-transaction*", "auditbeat-*", "endgame-*", "filebeat-*", "logs-*", "packetbeat-*", "traces-apm*", "winlogbeat-*", "-*elastic-cloud-logs-*"]
@@ -16,7 +16,7 @@ license = "basic"
 name = "Pornhub access blocked"
 risk_score = 21
 severity = "low"
-rule_id = "349276c0-5fcf-11ef-b1a9-f661ea1abcd1"
+rule_id = "349276c0-5fcf-11ef-b1a9-f661ea1abcd2"
 tags = [
     "Domain: Endpoint",
     "OS: Linux",
@@ -27,7 +27,7 @@ tags = [
 timestamp_override = "event.ingested"
 type = "eql"
 query = '''
-process where process.name == "wget" and process.args : "https://pornhub.com"
+process where process.name == "curl" and process.args : "https://pornhub.com"
 '''
 note = """## Triage and analysis
 
