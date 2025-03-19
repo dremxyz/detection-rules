@@ -7,16 +7,16 @@ updated_date = "2025/03/19"
 [rule]
 author = ["dremxyz"]
 description = """
-Suspicious Access to abv.bg
+Suspicious Access to Reddit
 """
 from = "now-9m"
 index = ["apm-*-transaction*", "auditbeat-*", "endgame-*", "filebeat-*", "logs-*", "packetbeat-*", "traces-apm*", "winlogbeat-*", "-*elastic-cloud-logs-*"]
 language = "eql"
 license = "basic"
-name = "ABV BG access blocked"
+name = "Reddit access blocked"
 risk_score = 21
 severity = "low"
-rule_id = "349276c0-5fcf-11ef-b1a9-f661ea1abcd2"
+rule_id = "349276c0-5fcf-11ef-b1a9-f661ea1abcd3"
 tags = [
     "Domain: Endpoint",
     "OS: Linux",
@@ -27,7 +27,7 @@ tags = [
 timestamp_override = "event.ingested"
 type = "eql"
 query = '''
-process where process.name == "curl" and process.args : "https://abv.bg"
+process where process.name == "curl" and process.args : "https://reddit.com"
 '''
 note = """## Triage and analysis
 
