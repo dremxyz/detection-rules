@@ -23,6 +23,7 @@ tags = [
     "Use Case: Threat Detection",
     "Tactic: Command and Control",
     "Resources: Investigation Guide",
+    "Custom_Rule",
 ]
 timestamp_override = "event.ingested"
 type = "eql"
